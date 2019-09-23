@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue app</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="shop">
+
+    <header class="header">
+        <div class="header wraper">
+            <div class="header wraper__logo">
+                <a href="/" class="header wraper__logo_link">Portland</a>
+            </div>
+            <div class="header wraper__menu">
+                <nav class="header wraper__menu_nav">
+                    <ul class="nav_items">
+                        <li class="nav_items__item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="nav_items__item">
+                            <a href="#">Devices</a>
+                        </li>
+                        <li class="nav_items__item">
+                            <a href="#">About Us</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="header wraper__cart">
+                <div class="header wraper__cart_icon">
+                    <div class="cart_icon__icon">Icon</div>
+                    <div class="cart_icon__text">Cart</div>
+                    <cart-count v-bind:count="cartCount()"></cart-count>
+                    <div>Cart - count {{cartTotalPrice()}}</div>
+                </div>
+                <div class="header wraper__cart_auth">
+                    <a href="#" class="cart_auth_link">Sign In</a>
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="header_bottom__wraper">
+                <div class="header_bottom__wraper_menu">
+                    <div class="header_bottom__wraper_menu__nav">
+                        <ul class="menu__nav">
+                            <li class="menu__nav_item">
+                                <a href="#">Top Sales</a>
+                            </li>
+                            <li class="menu__nav_item">
+                                <a href="#">Brand Focus</a>
+                            </li>
+                            <li class="menu__nav_item">
+                                <a href="#">Best Sellers</a>
+                            </li>
+                            <li class="menu__nav_item">
+                                <a href="#">Projects</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header_bottom__wraper_search">
+                    <nav class="header_bottom__wraper_search__nav">
+                        <ul class="search__nav">
+                            <li class="search__nav_li">
+                                <a href="#">Support</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="header_bottom__wraper_search_form">
+                        <div class="search_form__button">
+                            Button
+                        </div>
+                        <div class="search_form__field">
+                            <input type="text" class="search_form__field_input" placeholder="Search">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="slider">
+        <div class="slider_item">
+            <div class="slider_item__wraper">
+                <div class="slider_item__wraper_text">
+                    <div class="slider_item__wraper_text_name">
+                        <p>Iphone 0gb 0$ <br> 1MP Camera</p>
+                    </div>
+                    <div class="slider_item__wraper_text_desc">
+                        <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum <br>
+                            Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+                    </div>
+                    <div class="slider_item__wraper_text_btn">
+                        <a href="#" class="text_btn">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="top_filter">
+        <div class="top_filter__wrap">
+            <div class="top_filter__wrap_item">
+                <div class="wrap_item_name">
+                    <p>Sort By:</p>
+                </div>
+                <div class="wrap_item_value">
+                    <p>Best Match</p>
+                </div>
+            </div>
+            <div class="top_filter__wrap_item">
+                <div class="wrap_item_name">
+                    <p>Keywords</p>
+                </div>
+                <div class="wrap_item_field">
+                    <input type="text" class="wrap_item_field_input">
+                </div>
+                <div class="wrap_item_name">
+                    <p>Price</p>
+                </div>
+                <div class="wrap_item_field">
+                    <input type="text" class="wrap_item_field_input">
+                </div>
+                <div class="wrap_item_field__split">
+                    <p>-</p>
+                </div>
+                <div class="wrap_item_field">
+                    <input type="text" class="wrap_item_field_input">
+                </div>
+                <div class="wrap_item_field">
+                    <label>Free shipping
+                        <input type="checkbox" class="wrap_item_field_checkbox">
+                    </label>
+                </div>
+            </div>
+            <div class="top_filter__wrap_item">
+                <div class="wrap_item_name">
+                    <p>Ship To</p>
+                </div>
+                <div class="wrap_item_field">
+                    <p>Best Match</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="main">
+        <div class="main_wrap">
+            <div class="main_wrap__sidebar">
+                <div class="main_wrap__sidebar_category">
+                    <nav class="sidebar_category__nav">
+                        <ul class="sidebar_category__nav_items">
+                            <li class="sidebar_category__nav_items__item dropdown">
+                                <a href="#">Top Sales</a>
+                                <ul class="submenu">
+                                    <li class="submenu_item">
+                                        <a href="#">TV</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="main_wrap__sidebar_widget">
+                    <div class="sidebar_widget__name">
+                        <p>Available</p>
+                    </div>
+                </div>
+            </div>
+            <div class="main_wrap__content">
+                <div class="products_list" v-for="(product,key) in products">
+                    <div class="products_list_item">
+                        <div class="products_list_item__image">
+                            <img src="" alt="">
+                        </div>
+                        <div class="products_list_item__name">
+                            <p>{{product.name}}</p>
+                        </div>
+                        <div class="products_list_item__desc">
+                            <p>{{product.description}}</p>
+                        </div>
+                        <div class="products_list_item__price">
+                            <p>{{product.price}} {{currency}}</p>
+                        </div>
+                        <div class="products_list_item__btn">
+                            <button @click="addToCart(key)">{{textBtnAddToCart}}</button>
+                        </div>
+                        <div class="products_list_item__btn">
+                            <button v-if="checkFavorite(key)!=true" @click="addToFavorite(key)">
+                                {{textBtnAddToFavorite}}
+                            </button>
+                            <button v-else @click="addToFavorite(key)">{{textBtnRemoveFromFavorite}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background-color:aqua">
+            <div v-if="favorite.length > 0">
+                <div v-for="key in favorite">
+                    <div>
+                        <p>{{products[key].name}}</p>
+                        <p>{{products[key].price}}</p>
+                        <button @click="addToFavorite(key)">{{textBtnRemoveFromFavorite}}</button>
+                    </div>
+                </div>
+            </div>
+            <div v-else>
+                <p>Favorite is empty</p>
+            </div>
+        </div>
+    </section>
+    <modal-cart v-bind:cart="cart" v-bind:products="products"></modal-cart>
+    <div class="checkout">
+        <div class="checkout_process" v-if="cart.length > 0">
+            <label for="name">Name</label>
+            <input type="text" name="name" for="name">
+            <label for="email">Email</label>
+            <input type="text" name="email" for="email">
+            <input type="submit" value="Send">
+        </div>
+        <div v-else>
+
+        </div>
+    </div>
+    <login></login>
+    <register></register>
+    {{cartProducts()}};
+    <google-maps></google-maps>
+</div>
+<script src="js/vue.js"></script>
+<script src="js/app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUS6NMWXVkXTUqGx_4y2fE_l7bQbKmF50&callback=initMap"
+        async defer></script>
+<script src="js/main.js"></script>
+</body>
+</html>
