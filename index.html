@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animated.css">
+</head>
+<body>
+<header>  
+    <div class="demo">
+        <div class="content">
+            <div id="large-header" class="large-header">
+                <div class="nav-menu flex animated slideInDown">
+                    <ul class="flex">
+                        <a href="#"><li class='active'>Home</li></a>
+                        <a href="#"><li>About</li></a>
+                        <a href="#"><li>Portfolio</li></a>
+                        <a href="#"><li>Contact</li></a>
+                    </ul>
+                </div>
+                <canvas id="demo-canvas"></canvas>
+                <h1 class="main-title">
+                <div id="parent"><span class="thin">Hello, I'm <span class="highlight">Sergiy Stasyuk.</span>
+                I'm a full-stack web developer.</span><div id="border"></div>
+                </div>
+                </h1>
+                <a href="#about">
+                    <div class="arrow hide">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<section class="about" id="about">
+    <div class="container">
+        <div class="about_h2 wow slideInLeft"><h2>About</h2></div>
+        <div class="about_underline wow slideInLeft" data-wow-delay=".5s"><div class="underline"></div></div>
+    </div>
+</section>
+
+
+<script src="js/wow.min.js"></script>
+<script>new WOW().init();</script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/TweenLite.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/EasePack.min.js"></script>
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/499416/demo.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/script.js"></script>    
+
+</body>
+</html>
